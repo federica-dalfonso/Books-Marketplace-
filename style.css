@@ -1,0 +1,50 @@
+/*GENERAL SETTINGS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*color palette
+checked #2ecc71 (green)
+logo and main #34495e (blue)
+footer e dark #2c3e50 (blue deep)
+colored .warning (yellow)
+*/
+
+/*NAVBAR*/
+img.logo-size {
+    height: 2em;
+}
+
+.fa {
+    color: white;
+}
+
+button.margin-size {
+    margin-left: 0.5rem;
+}
+
+/*cards*/
+.card {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+img.card-img-top {
+    width: 100%;
+    height: 65%;
+    object-fit: contain;
+}  
+
+.card-body {
+    display: flex;   
+    flex-direction: column; 
+    justify-content: center;
+}
+
+h5 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
