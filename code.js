@@ -7,7 +7,7 @@ let urlBooks = "https://striveschool-api.herokuapp.com/books";
 // nodo parent sezione cards:
 let bookSection = document.getElementById("bookSection");
 // nodo input ricerca:
-// let searchBtn = document.getElementById("searchButton"); 
+let inputField = document.getElementById("searchField");
 
 // init variabile per response fetch
 let results; 
@@ -61,7 +61,7 @@ function createCards (results) {
         // creo LINK:
         let anchor = document.createElement("a");
         anchor.classList.add("d-block", "pb-3", "link-secondary");
-        // anchor href con dato che serve per nuovo esercizio - onclick
+        anchor.href = `article.html?id=${book.asin}`; // asin necessario per altra pagina
         anchor.innerText = "Read more";
 
         //creo BOTTONI
@@ -84,7 +84,7 @@ function createCards (results) {
         // remove button
         let removeBtn = document.createElement("button");
         removeBtn.classList.add("btn", "btn-danger", "text-white");
-        removeBtn.setAttribute("id", "removeButton");
+        removeBtn.addEventListener("click", (event) => card.style.display = "none"); // fa scomparire la card al click
         removeBtn.innerText = "Remove"
         // icon:
         let removeBtnIcon = document.createElement("i");
@@ -150,16 +150,13 @@ function addCart (book) {
     modalFooter.classList.remove("d-none");
 }
 
-let inputField = document.getElementById("searchField");
-let inputValue = inputField.value;
-console.log(inputValue)
-
 // funzione di ricerca: *DA IMPLEMENTARE, NON CON BUTTON MA CON INPUT
-function searchBook () {   
-    console.log(inputValue);
-    // inputValue = inputValue.toLowerCase();
-    // let filtered = results.filter((res) => {
-    //     return res.title.toLowerCase().includes(inputValue.trim());
-    // });
-    // createCards (filtered);
-}
+// function searchBook (results) {   
+//     let inputValue = inputField.value.toLowerCase();
+//     let filtered = results.filter((res) => {
+//         if (res.toLowerCase().includes(inputValue)) {
+//             return res.title.trim()
+//         }
+//     });
+//     createCards (filtered);
+// }
