@@ -7,7 +7,7 @@ let urlBooks = "https://striveschool-api.herokuapp.com/books";
 // nodo parent sezione cards:
 let bookSection = document.getElementById("bookSection");
 // nodo input ricerca:
-let searchBtn = document.getElementById("searchButton"); 
+// let searchBtn = document.getElementById("searchButton"); 
 
 // init variabile per response fetch
 let results; 
@@ -61,7 +61,7 @@ function createCards (results) {
         // creo LINK:
         let anchor = document.createElement("a");
         anchor.classList.add("d-block", "pb-3", "link-secondary");
-        // anchor href con dato che serve per nuovo esercizio
+        // anchor href con dato che serve per nuovo esercizio - onclick
         anchor.innerText = "Read more";
 
         //creo BOTTONI
@@ -150,14 +150,16 @@ function addCart (book) {
     modalFooter.classList.remove("d-none");
 }
 
-// funzione di ricerca: 
-function searchBook () {
-    let searchValue = document.getElementById("searchField").value;
-    searchValue = searchValue.toLowerCase();
-    let filtered = results.filter((res) => 
-        res.title.toLowerCase().includes(searchValue));
-        console.log(filtered)
-        bookSection.innerHTML = "";
-        createCards(filtered);
+let inputField = document.getElementById("searchField");
+let inputValue = inputField.value;
+console.log(inputValue)
+
+// funzione di ricerca: *DA IMPLEMENTARE, NON CON BUTTON MA CON INPUT
+function searchBook () {   
+    console.log(inputValue);
+    // inputValue = inputValue.toLowerCase();
+    // let filtered = results.filter((res) => {
+    //     return res.title.toLowerCase().includes(inputValue.trim());
+    // });
+    // createCards (filtered);
 }
-searchBtn.onclick = searchBook;
