@@ -11,7 +11,7 @@
 <body>
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-1">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="images/bookstore-logo.png" alt="Bookstore_Logo" class="logo-size">
             </a>
@@ -20,43 +20,45 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <li class="nav-item px-lg-2">
+                        <a class="nav-link text-uppercase" href="#">shop</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
+                    <li class="nav-item px-lg-2">
+                        <a class="nav-link text-uppercase" href="#">categories</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                    <li class="nav-item px-lg-2">
+                        <a class="nav-link text-uppercase" href="#">best sellers</a>
                     </li>
                 </ul>
                 <div class="d-flex">
                     <input class="form-control" type="search" placeholder="Search a title here..." aria-label="Search" id="searchField">
                     <button class="btn btn-outline-warning" type="submit" id="searchButton">Search</button>
-                </div>
-                <div>
-                <!--MODAL - cart -->
-                    <button type="button" class="btn btn-warning margin-size" data-bs-toggle="modal" data-bs-target="#cartModal">
-                        <i class="fa fa-shopping-cart"></i>
-                    </button>
 
-                    <div class="modal fade" id="cartModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="cartModalLabel">Your cart</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container-fluid">
-                                        <div class="row" id="modalRow">
-                                        </div>
-                                        
+                    <div class="modal-cart ps-2">
+                        <!--MODAL - cart -->
+                        <button type="button" class="btn btn-warning margin-size" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fa fa-shopping-cart"></i>
+                        </button>
+        
+                        <div class="modal fade" id="cartModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cartModalLabel">Your cart</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-warning text-white d-none">Checkout</button>
+                                    <div class="modal-body">
+                                        <div class="container-fluid">
+                                            <div class="row" id="modalRow">
+                                                <span class="fw-lighter">Your cart is empty!</span>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-warning text-white d-none">Checkout</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -65,18 +67,30 @@
             </div>
         </div>
     </nav>
-    <!--end of NAVBAR-->
+    <!--END OF navbar-->
 
-    <!--CONTENT AREA-->
+    <!--BOOKS SECTION-->
     <div class="container mt-4">
-        <div class="row g-2" id="bookSection">
+        <div class="row g-2" id="bookSection">            
         </div>
     </div>
-    <!--end of CONTENT AREA-->
+    <!--END OF books section-->
 
-    <!--aggiungi FOOTER-->   
-
-
+    <!--FOOTER-->    
+    <footer class="text-center bg-custom text-white mt-4">
+        <section class="py-3 bg-lighter">
+            <i class="fa fa-facebook-f px-1"></i>
+            <i class="fa fa-twitter px-1"></i>
+            <i class="fa fa-instagram px-1"></i>
+            <i class="fa fa-linkedin px-1"></i>
+        </section>
+        <!-- Copyright -->
+        <div class="text-center p-3 fw-light">
+          made with love for
+          <a class="text-secondary fw-lighter" href="">Epicode - WDPT023</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 
     <script src="code.js"></script>
