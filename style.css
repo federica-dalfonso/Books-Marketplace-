@@ -79,3 +79,8 @@ footer.bg-custom {
 section.bg-lighter {
     background-color: #34495e;
 }
+
+/*ARTICLE PAGE*/
+.article-img {
+    width: 100%;
+}

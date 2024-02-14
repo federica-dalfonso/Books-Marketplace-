@@ -32,6 +32,7 @@
                 </ul>
                 <div class="d-flex">
                     <input type="text" placeholder="Search a title here..." aria-label="Search" id="searchField">
+                    <button class="btn btn-outline-warning" type="submit" id="searchButton">Search</button>
                     <div class="modal-cart ps-2">
                         <!--MODAL - cart -->
                         <button type="button" class="btn btn-warning margin-size" data-bs-toggle="modal" data-bs-target="#cartModal">
@@ -48,14 +49,16 @@
                                     <div class="modal-body">
                                         <div class="container-fluid">
                                             <div class="row" id="modalRow">
-                                                <span class="fw-lighter">Your cart is empty!</span>
                                             </div>
                                             
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-warning text-white d-none">Checkout</button>
+                                    <div class="modal-footer justify-content-between">
+                                        <span>Total:</span>
+                                        <div>
+                                           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-warning text-white d-none">Checkout</button> 
+                                        </div>                                        
                                     </div>
                                 </div>
                             </div>

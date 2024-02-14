@@ -18,8 +18,9 @@ window.onload = () => {
     .then((response) => response.json())
     .then((json) => {
         results = json;
-        console.log(results)
+        console.log(results);
         createCards(results);
+        inputField.addEventListener("keyup", () => searchBook())
     })
     .catch((err)  => console.log("Error detected: ", err));
 }
@@ -111,9 +112,6 @@ function createCards (results) {
 
 // funzione che aggiunge prodotto al carrello:
 function addCart (book) {
-    let emptyMessage = document.querySelector("#modalRow span.fw-lighter");
-    emptyMessage.classList.add("d-none");
-
     let modalRow = document.getElementById("modalRow");
     
     let modalCol = document.createElement("div");
@@ -136,7 +134,10 @@ function addCart (book) {
     bookPrevDelete.addEventListener("click", () => {
 
         bookItems.style.display = "none"; // rimuove il libro dal carrello
-    });
+
+        });
+
+    bookCounter(bookItems);
 
     modalRow.appendChild(modalCol);
     modalCol.appendChild(bookList);
@@ -148,15 +149,32 @@ function addCart (book) {
 
     let modalFooter = document.querySelector("div.modal-footer .btn-warning");
     modalFooter.classList.remove("d-none");
+
+    
 }
 
-// funzione di ricerca: *DA IMPLEMENTARE, NON CON BUTTON MA CON INPUT
-// function searchBook (results) {   
-//     let inputValue = inputField.value.toLowerCase();
-//     let filtered = results.filter((res) => {
-//         if (res.toLowerCase().includes(inputValue)) {
-//             return res.title.trim()
-//         }
-//     });
-//     createCards (filtered);
-// }
+let count = [];
+// conta gli items:
+function bookCounter (bookItems) {
+    count = count.concat(bookItems);
+    let booksNum = count.length;
+    console.log(booksNum);
+    let showCount = document.querySelector ("div.modal-footer span");
+    showCount.innerText = `Total: ${booksNum}`;
+}
+
+
+//ricerca:
+function searchBook () {
+    let searchValue = inputField.value;
+    searchValue = searchValue.toLowerCase();
+    let filtered = results.filter((res) => 
+        res.title.toLowerCase().includes(searchValue));
+        bookSection.innerHTML = "";
+        createCards(filtered);
+}
+let searchBtn = document.getElementById("searchButton");
+searchBtn.onclick = searchBook;
+
+
+
